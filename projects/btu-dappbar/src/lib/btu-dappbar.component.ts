@@ -14,7 +14,6 @@ export class BtuDappbarComponent implements OnInit, OnChanges {
   connected: boolean
 
   constructor() {
-    
     this.defaultAddr = "0xd00551b9d6CB3C4dDfc36df874c642b19D2b9e22"
     this.connected = false
     sessionStorage.setItem("BTU-walletConnected", "false")
