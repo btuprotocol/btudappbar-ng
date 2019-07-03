@@ -2,9 +2,7 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'btu-dappbar',
-  template: `
-    <span></span>
-  `,
+  templateUrl: './btu-dappbar.component.html',
   styles: []
 })
 export class BtuDappbarComponent implements OnInit, OnChanges {

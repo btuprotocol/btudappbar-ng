@@ -25,10 +25,12 @@ export class NgbdModalContent {
 }
 
 @Component({
-  selector: 'ngbd-modal-component',
-  templateUrl: './modal-component.html'
+  selector: 'dapp-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css']
 })
-export class NgbdModalComponent {
+export class ModalComponent {
+
   constructor(private modalService: NgbModal) {}
 
   open() {

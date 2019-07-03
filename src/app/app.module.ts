@@ -9,7 +9,6 @@ import { BarComponent } from './bar/bar.component';
   declarations: [
     AppComponent,
     BtuDappbarComponent,
-    BarComponent
   ],
   imports: [
     BrowserModule

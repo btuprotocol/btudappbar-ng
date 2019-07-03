@@ -1,24 +1,51 @@
 # BtuDappbar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+## Install
 
-## Code scaffolding
+```
+npm install btu-dappbar --save
+```
 
-Run `ng generate component component-name --project btu-dappbar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project btu-dappbar`.
-> Note: Don't forget to add `--project btu-dappbar` or else it will be added to the default project in your `angular.json` file. 
+## Usage
 
-## Build
+The BTU.js DappBar is a component that can easily integrated on any Angular webpage, used for detecting web3 enabled browser embeded crypto wallets (works with plugins like metamask and mobile dapp browsers) and making the users wallet address accessible to the webpage.
+You can configure a whitelist of domains where the app bar will be displayed, outside of this list the component will handle the wallet address by reading it from a GET parameter called 'w'. (test.com/?w=0xAB...22)
 
-Run `ng build btu-dappbar` to build the project. The build artifacts will be stored in the `dist/` directory.
+Start by importing the component and specifying it in your 
 
-## Publishing
+```javascript
+import { BtuDappbarComponent } from 'btu-dappbar';
 
-After building your library with `ng build btu-dappbar`, go to the dist folder `cd dist/btu-dappbar` and run `npm publish`.
+@NgModule({
+  declarations: [
+    AppComponent,
+    BtuDappbarComponent,
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+```
 
-## Running unit tests
+```html
+<!-- App is always displayed if no whitelist specified -->
+<btu-dappbar></btu-dappbar>
+<!-- or -->
+<btu-dappbar restricDomain="test.com"></btu-dappbar>
+<!-- or (with domains as an array of strings) -->
+<btu-dappbar [restricDomain]="domains"></btu-dappbar>
+```
 
-Run `ng test btu-dappbar` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Once connected, the wallet address is accesible from the sessionStorage this way:
 
-## Further help
+```javascript
+const wallet = sessionStorage.getItem('BTU-walletAddr');
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You can verify if the user has connected his wallet by fetching the following boolean in the sessionStorage:
+
+```javascript
+const wallet = sessionStorage.getItem('BTU-walletConnected');
+```
