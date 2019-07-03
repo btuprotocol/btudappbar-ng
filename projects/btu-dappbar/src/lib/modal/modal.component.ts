@@ -25,7 +25,7 @@ export class NgbdModalContent {
 }
 
 @Component({
-  selector: 'dapp-modal',
+  selector: 'lib-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })

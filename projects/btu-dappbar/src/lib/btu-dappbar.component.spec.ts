@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BtuDappbarComponent } from './btu-dappbar.component';
+import { ModalComponent, NgbdModalContent } from './modal/modal.component';
+import { TestComponent } from './test/test.component'
 
 describe('BtuDappbarComponent', () => {
   let component: BtuDappbarComponent;
@@ -8,7 +10,7 @@ describe('BtuDappbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BtuDappbarComponent ]
+      declarations: [ BtuDappbarComponent, ModalComponent, NgbdModalContent, TestComponent ]
     })
     .compileComponents();
   }));
